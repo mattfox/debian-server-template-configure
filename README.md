@@ -4,7 +4,7 @@ Configure a guest after having been cloned from debian-server-template in Matt's
 
 ## Usage
 
-* Clone debian-server-template. Ensure you get new MAC addresses.
+* Clone debian-server-template. Ensure you reinitialize MAC addresses.
 * Start the new guest. Log in as root.
 * Select a free IP address from the range 192.168.56.{50..254}
 * Run these commands:
