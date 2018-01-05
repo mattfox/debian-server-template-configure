@@ -16,11 +16,10 @@ if [ "${HOST_ONLY_IFACE}" == "" ]; then
 fi
 
 # Set interface and IP address on host-only adapter
-# In Ubuntu Server, install package ifupdown2 to get interfaces.d.
 HOST_ONLY_IFACE_FILE="/etc/network/interfaces.d/hostonly"
 sed --in-place "s/INTERFACE/${HOST_ONLY_IFACE}/" ${HOST_ONLY_IFACE_FILE}
 sed --in-place "s/HOST_ONLY_ADDR/${NEW_IP}/" ${HOST_ONLY_IFACE_FILE}
-sed --in-place "s/#//" ${HOST_ONLY_IFACE_FILE} # Remove comments
+sed --in-place "s/#//" ${HOST_ONLY_IFACE_FILE}  # Remove comments
 
 # Set hostname
 ORIGINAL_HOSTNAME=$(cat /etc/hostname)
