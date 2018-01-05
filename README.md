@@ -1,4 +1,4 @@
-# debian-server-template-configure
+# virtualbox-template-configure
 
 Configure a guest after having been cloned from debian-server-template or ubuntu-server-template in Matt's VirtualBox install.
 
