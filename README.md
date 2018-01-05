@@ -28,7 +28,7 @@ Rough steps for setting up template:
 * Install OS.
 * From console, log in as initial user. Manually launch DHCP client for host-only interface.
 * Log in via SSH.
-* Set authorized_key of initial user.
+* Set authorized_key of initial user and of root, if available.
 * Set .gitconfig of initial user:
 
       git config --global user.email "you@example.com"
@@ -36,5 +36,15 @@ Rough steps for setting up template:
 
 * Add /etc/network/interfaces.d/hostonly
 * Add /usr/local/bin/server-template-configure.sh
-* Install VirtualBox Guest Additions
+* Install VirtualBox Guest Additions:
 
+      sudo -i
+      apt-get install build-essential linux-headers-$(uname -r)
+      mkdir -p /media/cdrom
+      mount /dev/cdrom /media/cdrom/
+      /media/cdrom/VBoxLinuxAdditions.run
+      reboot
+    
+    After reboot:
+    
+      usermod --append --groups vboxsf ${initial-user}
