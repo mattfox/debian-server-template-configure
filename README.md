@@ -13,9 +13,28 @@ Configure a guest after having been cloned from debian-server-template or ubuntu
 export NEW_IP=192.168.56.x
 export NEW_HOSTNAME=new-hostname
 export HOST_ONLY_IFACE=eth1  # Or something such as enp0s8
-/usr/local/bin/debian-server-template-configure.sh  # In Ubuntu, also use sudo
+/usr/local/bin/server-template-configure.sh  # In Ubuntu, also use sudo
 reboot
 ````
 
 * Add a stanza for this host to your `.ssh/config`.
 * SSH to the host with the user `mattfox`.
+
+## Template setup
+
+Rough steps for setting up template:
+
+* Configure new guest. Ensure iface 0 is NAT, iface 1 is host-only.
+* Install OS.
+* From console, log in as initial user. Manually launch DHCP client for host-only interface.
+* Log in via SSH.
+* Set authorized_key of initial user.
+* Set .gitconfig of initial user:
+
+      git config --global user.email "you@example.com"
+      git config --global user.name "Your Name"
+
+* Add /etc/network/interfaces.d/hostonly
+* Add /usr/local/bin/server-template-configure.sh
+* Install VirtualBox Guest Additions
+

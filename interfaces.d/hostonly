@@ -1,0 +1,4 @@
+#auto INTERFACE
+#iface INTERFACE inet static
+#  address HOST_ONLY_ADDR
+#  netmask 255.255.255.0
