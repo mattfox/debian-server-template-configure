@@ -1,11 +1,11 @@
 # debian-server-template-configure
 
-Configure a guest after having been cloned from debian-server-template in Matt's VirtualBox install.
+Configure a guest after having been cloned from debian-server-template or ubuntu-server-template in Matt's VirtualBox install.
 
 ## Usage
 
-* Clone debian-server-template. Ensure you reinitialize MAC addresses.
-* Start the new guest. Log in as root.
+* Clone debian-server-template or ubuntu-server-template. Ensure you reinitialize MAC addresses.
+* Start the new guest. Log in as root (Debian) or mattfox (Ubuntu).
 * Select a free IP address from the range 192.168.56.{50..254}
 * Run these commands:
 
