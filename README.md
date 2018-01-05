@@ -12,7 +12,8 @@ Configure a guest after having been cloned from debian-server-template or ubuntu
 ```bash
 export NEW_IP=192.168.56.x
 export NEW_HOSTNAME=new-hostname
-/usr/local/bin/debian-server-template-configure.sh
+export HOST_ONLY_IFACE=eth1  # Or something such as enp0s8
+/usr/local/bin/debian-server-template-configure.sh  # In Ubuntu, also use sudo
 reboot
 ````
 
