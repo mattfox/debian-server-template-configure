@@ -13,7 +13,7 @@ Configure a guest after having been cloned from debian-server-template or ubuntu
       export NEW_IP=192.168.56.x
       export NEW_HOSTNAME=new-hostname
       export HOST_ONLY_IFACE=eth1  # Or something such as enp0s8
-      /usr/local/bin/server-template-configure.sh
+      /usr/local/bin/virtualbox-template-configure.sh
       reboot
 
 * Add a stanza for this host to your `.ssh/config`.
@@ -33,8 +33,8 @@ Rough steps for setting up template:
       git config --global user.email "you@example.com"
       git config --global user.name "Your Name"
 
-* Add /etc/network/interfaces.d/hostonly
-* Add /usr/local/bin/server-template-configure.sh
+* Add /etc/network/interfaces.d/hostonly. Also, ensure there's a `source /etc/network/interfaces.d/*` directive somewhere in `/etc/network/interfaces`. Debian has this by default, but not Ubuntu. Ubuntu also needs the `ifupdown2` package.
+* Add /usr/local/bin/virtualbox-template-configure.sh
 * Install VirtualBox Guest Additions:
 
       sudo -i
