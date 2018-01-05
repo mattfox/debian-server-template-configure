@@ -9,13 +9,12 @@ Configure a guest after having been cloned from debian-server-template or ubuntu
 * Select a free IP address from the range 192.168.56.{50..254}
 * Run these commands:
 
-```bash
-export NEW_IP=192.168.56.x
-export NEW_HOSTNAME=new-hostname
-export HOST_ONLY_IFACE=eth1  # Or something such as enp0s8
-/usr/local/bin/server-template-configure.sh  # In Ubuntu, also use sudo
-reboot
-````
+      bash
+      export NEW_IP=192.168.56.x
+      export NEW_HOSTNAME=new-hostname
+      export HOST_ONLY_IFACE=eth1  # Or something such as enp0s8
+      /usr/local/bin/server-template-configure.sh  # In Ubuntu, also use sudo
+      reboot
 
 * Add a stanza for this host to your `.ssh/config`.
 * SSH to the host with the user `mattfox`.
