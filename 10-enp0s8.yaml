@@ -1,0 +1,5 @@
+#network:
+#  ethernets:
+#    INTERFACE:
+#      addresses: [HOST_ONLY_ADDR/24]
+#  version: 2
