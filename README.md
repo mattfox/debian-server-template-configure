@@ -33,9 +33,15 @@ Rough steps for setting up template:
       git config --global user.email "you@example.com"
       git config --global user.name "Your Name"
 
-* Add /etc/network/interfaces.d/hostonly. Also, ensure there's a `source /etc/network/interfaces.d/*` directive somewhere in `/etc/network/interfaces`. Debian has this by default, but not Ubuntu. Ubuntu also needs the `ifupdown2` package.
-* Add /usr/local/bin/virtualbox-template-configure.sh
+* If using /etc/network/interfaces:
+  * Add /etc/network/interfaces.d/hostonly from this repo.
+  * Ensure there's a `source /etc/network/interfaces.d/*` directive somewhere in `/etc/network/interfaces`.
+* If using /etc/netplan:
+  * Add /etc/netplan/10-enp0s8.yaml from this repo.
+* Copy /usr/local/bin/virtualbox-template-configure.sh from this repo to /usr/local/bin/.
 * Install VirtualBox Guest Additions:
+
+  Install `virtualbox-guest-utils` package. Or,
 
       sudo -i
       apt-get install build-essential linux-headers-$(uname -r)
